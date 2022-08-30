@@ -23,8 +23,8 @@ app.use(cors())
 app.use(express.json());
 
  app.get('/register', async function (request, response) {
-  const datas = await client.db("register").collection("signin").find({}).toArray();
- response.send(datas)
+  const data = await client.db("register").collection("signin").find({}).toArray();
+ response.send(data);
 });
 
 app.post('/register', async function (request, response) {
