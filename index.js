@@ -30,8 +30,7 @@ app.use(express.json());
 app.post('/register/data', async function (request, response) {
   const data = request.body;
   const result = await client.db("register").collection("signin").insertOne(data);
-  
   response.send(result);
  });
 
-app.listen(PORT)
+app.listen(PORT,()=>console.log(`APP is running at ${PORT}`))
