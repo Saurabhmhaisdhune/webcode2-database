@@ -27,7 +27,7 @@ app.use(express.json());
  response.send(datas)
 });
 
-app.post('/register/data', async function (request, response) {
+app.post('/register', async function (request, response) {
   const data = request.body;
   const result = await client.db("register").collection("signin").insertOne(data);
   response.send(result);
